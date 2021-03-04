@@ -81,7 +81,7 @@ function Users({ title, ...props }) {
 
   // Wichtig sonst Problem mit 'map'
   if (isLoading) return "Loading...";
-  if (error) return "An error has occurred: " + error.message;
+  if (error) return "An error has occurred : " + error.message;
   return (
     <div className="wrapper">
       <div
