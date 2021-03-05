@@ -1,13 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./styles.css";
-import React from "react";
+import React, { useRef } from "react";
 import ReactDOM from "react-dom";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-  useQueries
-} from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import { ReactQueryDevtools } from "react-query/devtools";
 import Todos from "./Todos";
@@ -24,10 +19,19 @@ export default function App() {
 }
 
 function Example() {
+  ////////////
+  const [value, setValue] = React.useState("");
+
+  const handleChange = (newValue) => {
+    setValue(newValue);
+  };
+  ////////////
   return (
     <div className="wrapper">
-      <Todos />
+      <Todos onChange={handleChange} />
       <ReactQueryDevtools initialIsOpen={false} />
+
+      <p>{}</p>
     </div>
   );
 }

@@ -115,6 +115,7 @@ function Todos({ title, ...props }) {
         <label>
           <p>Title</p>
           <input
+            className="input"
             name="title"
             onChange={handleChange}
             value={formData.title || ""}
@@ -123,16 +124,16 @@ function Todos({ title, ...props }) {
         <label>
           <p>Description</p>
           <textarea
+            className="input"
             name="description"
             onChange={handleChange}
-            rows="2"
-            cols="20"
             value={formData.description || ""}
           />
         </label>
         <label>
           <p>Tags</p>
           <input
+            className="input"
             name="tags"
             onChange={handleChange}
             value={formData.tags.join(" ") || ""}
@@ -140,6 +141,7 @@ function Todos({ title, ...props }) {
         </label>
         <label>
           <p>isComplete</p>
+
           <input
             type="checkbox"
             name="isComplete"
@@ -150,6 +152,7 @@ function Todos({ title, ...props }) {
         <label>
           <p>dueDate</p>
           <input
+            className="input"
             type="date"
             name="dueDate"
             onChange={handleChange}

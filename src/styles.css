@@ -30,7 +30,8 @@ body {
 .wrapper fieldset {
   margin: 10px 0;
   padding: 5px;
-  border-color: yellow;
+  border: solid 2px #e7caff;
+  border-radius: 8px;
 }
 
 .actualState {
@@ -40,6 +41,7 @@ body {
   flex-direction: column;
   text-align: center;
   font-size: 14px;
+  border-radius: 8px;
 }
 .rightActionButton {
   float: right;
@@ -47,6 +49,7 @@ body {
   padding: 6px 5px;
   background: #ccc;
   margin: 2px;
+  border-radius: 8px;
 }
 
 code {
@@ -57,4 +60,78 @@ code {
 li {
   display: block;
   margin: 15px;
+}
+
+/*Form Styles*/
+:root {
+  --input-border: #8b8a8b;
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+}
+.input {
+  margin: 10px 0;
+  width: 250px;
+  font-size: 16px;
+  font-size: Max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: #fff;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+  transition: 180ms box-shadow ease-in-out;
+}
+
+.input:focus {
+  border-color: hsl(
+    var(--input-focus-h),
+    var(--input-focus-s),
+    var(--input-focus-l)
+  );
+  box-shadow: 0 0 0 3px
+    hsla(
+      var(--input-focus-h),
+      var(--input-focus-s),
+      calc(var(--input-focus-l) + 40%),
+      0.8
+    );
+  outline: 3px solid transparent;
+}
+
+.input:not(textarea) {
+  line-height: 1;
+  height: 2.25rem;
+}
+
+input[type="file"] {
+  font-size: 0.9em;
+  padding-top: 0.35rem;
+}
+
+textarea.input {
+  resize: vertical;
+}
+
+.input[readonly] {
+  border-style: dotted;
+  cursor: not-allowed;
+  color: #777;
+}
+
+.input[disabled] {
+  --input-border: #ccc;
+
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+label {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1;
+  margin: 5px;
+}
+
+.input + label {
+  margin-top: 2rem;
 }
